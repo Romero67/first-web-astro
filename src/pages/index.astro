@@ -1,16 +1,12 @@
 ---
-
+import LayoutMain from '../layouts/Main.astro'
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Mi sitio astro</title>
-	</head>
-	<body>
-		<h1>Mi sitio astro</h1>
-	</body>
-</html>
+<LayoutMain>
+
+	<div class="container">
+		<span class="main-subtitle">Arte de</span>
+		<h1 class="main-title">Mariano Romero</h1>
+	</div>
+
+</LayoutMain>

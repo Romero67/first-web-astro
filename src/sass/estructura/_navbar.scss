@@ -1,0 +1,45 @@
+.nav{
+ background-color: $color-brand;
+ 
+ .container{
+  color: $color-white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+ }
+
+ .logo{
+  font-size: 34px;
+  cursor: pointer;
+ }
+
+ .navbar{
+  display: none;
+  column-gap: 35px;
+  
+  @include respond-to('desktop'){
+   display: flex;
+  }
+
+  a{
+   color: $color-white;
+   font-family: 'Roboto', sans-serif;
+  }
+  a.activo{
+   color: $color-lightgrey;
+  }
+
+ }
+
+ .btn-menu{
+  svg{
+   width: 25px;
+   height: 25px;
+   fill: white;
+  }
+  @include respond-to('desktop'){
+   display: none;
+  }
+ }
+}

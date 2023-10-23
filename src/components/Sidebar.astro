@@ -1,0 +1,29 @@
+<div class="sidebar">
+ <div class="btn-close">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><title/><g id="cross"><line class="cls-1" x1="7" x2="25" y1="7" y2="25"/><line class="cls-1" x1="7" x2="25" y1="25" y2="7"/></g></svg>
+ </div>
+ <ul class="sidebar-nav">
+  <li><a href="/">Inicio</a></li>
+  <li><a href="/obras">Obras elegidas</a></li>
+  <li><a href="/acerca">Acerca de</a></li>
+  <li><a href="/contacto">Contacto</a></li>
+ </ul>
+</div>
+
+<script>
+ function initBtnMenuSidebar(){
+  const sidebar = document.querySelector('.sidebar');
+  const btnMenu = document.querySelector('.sidebar .btn-close');
+ 
+  if(!btnMenu || !sidebar){
+   console.log("no hay botones o sidebar");
+   return;
+  }
+ 
+  btnMenu.addEventListener('click', ()=>{
+   sidebar.classList.remove('show')
+  })
+ }
+
+ initBtnMenuSidebar();
+</script>

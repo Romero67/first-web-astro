@@ -1,0 +1,21 @@
+main .container-contacto{
+ padding-top: 50px;
+
+ .contacto-title{
+  color: $color-white;
+ }
+
+ .contacto-info{
+  
+  .contacto-info-redes{
+   display: flex;
+   align-items: center;
+   column-gap: 20px;
+  }
+  .contacto-info-redes svg{
+   width: 30px;
+   height: 30px;
+   fill: white;
+  }
+ }
+}

@@ -1,0 +1,15 @@
+@import '../lib/settings';
+
+*{
+ font-family: 'Merriweather', serif;
+}
+
+.container{
+ padding: 0 10px;
+ max-width: 1440px;
+ margin: auto;
+
+ @include respond-to('desktop'){
+  padding: 0 20px;
+ }
+}

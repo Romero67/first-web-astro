@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "compile:sass": "sass ./src/sass/main.scss ./public/css/styles.css --watch",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
