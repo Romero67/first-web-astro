@@ -24,12 +24,9 @@
   padding: 10px;
 }
 .nav .logo {
-  display: block;
+  font-family: "UnifrakturMaguntia";
   font-size: 34px;
   cursor: pointer;
-}
-.nav .logo span {
-  font-family: "UnifrakturMaguntia";
 }
 .nav .navbar {
   display: none;
@@ -161,44 +158,25 @@ main .container .main-title {
 main .container-obras {
   padding-top: 50px;
 }
-@media (min-width: 64em) {
-  main .container-obras {
-    padding-top: 100px;
-  }
-}
 main .container-obras .obras-title {
-  font-family: "UnifrakturMaguntia";
   color: white;
   letter-spacing: 2px;
   margin-bottom: 40px;
-  font-size: 40px;
-}
-@media (min-width: 64em) {
-  main .container-obras .obras-title {
-    font-size: 60px;
-  }
 }
 main .container-obras .obras {
   width: 100%;
 }
 main .container-obras .obras .obras-img {
-  cursor: pointer;
   position: relative;
   height: 250px;
   margin-bottom: 20px;
   overflow: hidden;
   max-width: 100%;
   border: 1px solid white;
-  transition: 0.3s transform ease;
-}
-main .container-obras .obras .obras-img:hover {
-  transform: scale(1.1);
-  z-index: 1;
 }
 @media (min-width: 64em) {
   main .container-obras .obras .obras-img {
     height: 500px;
-    margin-bottom: 50px;
   }
 }
 main .container-obras .obras .obras-img img {
@@ -211,21 +189,14 @@ main .container-obras .obras .obras-img img {
 main .container-acerca {
   padding-top: 50px;
 }
-@media (min-width: 64em) {
-  main .container-acerca {
-    padding-top: 100px;
-  }
-}
 main .container-acerca .acerca-title {
   color: white;
   letter-spacing: 2px;
   margin-bottom: 40px;
-  font-family: "UnifrakturMaguntia";
-  font-size: 40px;
 }
 @media (min-width: 64em) {
   main .container-acerca .acerca-title {
-    font-size: 60px;
+    font-size: 46px;
   }
 }
 main .container-acerca .acerca-img {
@@ -276,34 +247,9 @@ main .container-acerca .acerca-p {
 
 main .container-contacto {
   padding-top: 50px;
-  padding-bottom: 50px;
-}
-@media (min-width: 64em) {
-  main .container-contacto {
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
 }
 main .container-contacto .contacto-title {
-  letter-spacing: 2px;
-  margin-bottom: 40px;
-  font-size: 50px;
   color: #FFF;
-  font-family: "UnifrakturMaguntia";
-}
-@media (min-width: 64em) {
-  main .container-contacto .contacto-title {
-    font-size: 70px;
-  }
-}
-main .container-contacto .contacto-info {
-  max-width: 1000px;
-}
-main .container-contacto .contacto-info .contacto-info-p {
-  color: white;
-  font-size: 16px;
-  line-height: 22px;
-  margin-bottom: 10px;
 }
 main .container-contacto .contacto-info .contacto-info-redes {
   display: flex;
@@ -311,51 +257,9 @@ main .container-contacto .contacto-info .contacto-info-redes {
   column-gap: 20px;
 }
 main .container-contacto .contacto-info .contacto-info-redes svg {
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   fill: white;
-}
-main .container-contacto .contacto-form {
-  width: 100%;
-  max-width: 500px;
-  margin-top: 35px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid white;
-  border-radius: 8px;
-  padding: 20px 10px;
-  display: grid;
-}
-main .container-contacto .contacto-form-campos {
-  display: grid;
-  row-gap: 25px;
-  margin-bottom: 30px;
-}
-main .container-contacto .contacto-form input, main .container-contacto .contacto-form textarea {
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid white;
-  padding: 10px 15px;
-  font-size: 20px;
-  font-family: "UnifrakturMaguntia";
-  width: 100%;
-  color: white;
-}
-main .container-contacto .contacto-form input::placeholder, main .container-contacto .contacto-form textarea::placeholder {
-  color: white;
-}
-main .container-contacto .contacto-form input:focus, main .container-contacto .contacto-form textarea:focus {
-  border: 1px solid white;
-  outline: none;
-}
-main .container-contacto .contacto-form input.contacto-form-btn {
-  border: 2px solid white;
-  border-radius: 8px;
-  font-size: 34px;
-  cursor: pointer;
 }
 
 * {

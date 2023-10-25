@@ -10,8 +10,12 @@
  }
 
  .logo{
+  display: block;
   font-size: 34px;
   cursor: pointer;
+  span{
+   font-family: 'UnifrakturMaguntia';
+  }
  }
 
  .navbar{

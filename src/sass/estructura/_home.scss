@@ -31,18 +31,20 @@ main{
   }
 
   .main-subtitle{
-   font-size: 18px;
-   font-weight: 600;
+   font-size: 16px;
+   font-weight: 400;
+   color: white;
    @include respond-to('desktop'){
     font-size: 22px;
    }
   }
   .main-title{
-   font-size: 34px;
+   font-family: 'UnifrakturMaguntia';
+   font-size: 54px;
    color: $color-white;
    letter-spacing: 2px;
    @include respond-to('desktop'){
-    font-size: 60px;
+    font-size: 90px;
    }
   }
  }

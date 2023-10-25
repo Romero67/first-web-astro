@@ -1,13 +1,18 @@
 main .container-acerca{
  padding-top: 50px;
+ @include respond-to('desktop'){
+  padding-top: 100px;
+ }
 
  .acerca-title{
   color: white;
   letter-spacing: 2px;
   margin-bottom: 40px;
+  font-family: 'UnifrakturMaguntia';
+  font-size: 40px;
 
   @include respond-to('desktop'){
-   font-size: 46px;
+   font-size: 60px;
   }
  }
 

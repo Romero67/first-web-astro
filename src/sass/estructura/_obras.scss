@@ -1,10 +1,18 @@
 main .container-obras{
  padding-top: 50px;
+ @include respond-to('desktop'){
+  padding-top: 100px;
+ }
 
  .obras-title{
+  font-family: 'UnifrakturMaguntia';
   color: white;
   letter-spacing: 2px;
   margin-bottom: 40px;
+  font-size: 40px;
+  @include respond-to('desktop'){
+   font-size: 60px;
+  }
  }
 
  .obras{
@@ -12,15 +20,23 @@ main .container-obras{
 
  
   .obras-img{
+   cursor: pointer;
    position: relative;
    height: 250px;
    margin-bottom: 20px;
    overflow: hidden;
    max-width: 100%;
    border: 1px solid white;
+   transition: 0.3s transform ease;
+
+   &:hover{
+    transform: scale(1.1);
+    z-index: 1;
+   }
 
    @include respond-to('desktop'){
     height: 500px;
+    margin-bottom: 50px;
    }
  
    img{
