@@ -28,6 +28,12 @@ main{
 
   @include respond-to('desktop'){
    padding-top: 275px;
+   padding-left: 60px;
+   padding-right: 60px;
+  }
+  @include respond-to('widescreen'){
+   padding-left: 0px;
+   padding-right: 0px;
   }
 
   .main-subtitle{
