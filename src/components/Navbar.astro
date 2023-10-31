@@ -116,7 +116,7 @@
 
   // Recorre los enlaces y compara sus URLs con la URL actual
   for (var i = 0; i < navLinks.length; i++) {
-    if (navLinks[i].href === currentUrl || navLinks[i].href === (currentUrl+"/")) {
+    if (navLinks[i].href === currentUrl || (navLinks[i].href+"/") === currentUrl) {
       console.log("entró");
       navLinks[i].classList.add("activo");
     }
