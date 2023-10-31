@@ -1,27 +1,109 @@
 ---
-import LayoutMain from '../../layouts/Main.astro'
+import LayoutMain from "../../layouts/Main.astro";
+import { Image } from 'astro:assets';
+import ImgPerfil from "@/assets/perfil.png";
 ---
 
 <LayoutMain classMask="main-mask-dark">
-	
-<div class="container container-acerca">
- <h1 class="acerca-title">Biografía</h1>
+  <div class="container container-acerca">
+    <h1 class="acerca-title">Biografía</h1>
 
- <div class="acerca-main">
-  <div class="acerca-img">
-   <img src="/img/perfil.png" alt="perfil">
+    <div class="acerca-main">
+      <div class="acerca-img">
+        <Image src={ImgPerfil} alt="perfil" />
+      </div>
+
+      <div class="acerca-parrafos">
+        <p class="acerca-p">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eos
+          praesentium id voluptate delectus saepe aliquam. Modi, quod
+          consequuntur accusamus tenetur voluptatum, enim animi doloribus
+          temporibus officiis molestiae sapiente itaque!
+        </p>
+        <p class="acerca-p">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eos
+          praesentium id voluptate delectus saepe aliquam. Modi, quod
+          consequuntur accusamus tenetur voluptatum, enim animi doloribus
+          temporibus officiis molestiae sapiente itaque!
+        </p>
+      </div>
+    </div>
   </div>
- 
-  <div class="acerca-parrafos">
-   <p class="acerca-p">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eos praesentium id voluptate delectus saepe aliquam. Modi, quod consequuntur accusamus tenetur voluptatum, enim animi doloribus temporibus officiis molestiae sapiente itaque!
-   </p>
-    <p class="acerca-p">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eos praesentium id voluptate delectus saepe aliquam. Modi, quod consequuntur accusamus tenetur voluptatum, enim animi doloribus temporibus officiis molestiae sapiente itaque!
-   </p>
-  </div>
- </div>
-</div>
-
-
 </LayoutMain>
+
+<style lang="scss">
+ @import "@/base.scss";
+  .container-acerca {
+    position: relative;
+    z-index: 9;
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    @include respond-to("desktop") {
+      padding-top: 100px;
+    }
+
+    .acerca-title {
+      color: white;
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+      font-family: "UnifrakturMaguntia";
+      font-size: 40px;
+
+      @include respond-to("desktop") {
+        font-size: 60px;
+      }
+    }
+
+    .acerca-img {
+      width: 100%;
+      height: 300px;
+      position: relative;
+
+      @include respond-to("desktop") {
+        width: 100%;
+        max-width: 500px;
+        height: 500px;
+        position: relative;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+      }
+    }
+
+    .acerca-p {
+      color: $color-white;
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      line-height: 22px;
+      margin-top: 20px;
+
+      @include respond-to("desktop") {
+        font-size: 18px;
+        line-height: 24px;
+        margin-top: 30px;
+      }
+    }
+
+    @include respond-to("desktop") {
+      .acerca-main {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        column-gap: 100px;
+        width: 100%;
+      }
+      .acerca-parrafos {
+        max-width: 280px;
+      }
+    }
+  }
+</style>

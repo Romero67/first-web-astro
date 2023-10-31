@@ -1,12 +1,54 @@
 ---
-import LayoutMain from '../layouts/Main.astro'
+import LayoutMain from "../layouts/Main.astro";
 ---
 
 <LayoutMain>
-
-	<div class="container">
-		<span class="main-subtitle">Arte de</span>
-		<h1 class="main-title">Mariano Romero</h1>
-	</div>
-
+  <div class="container">
+    <span class="main-subtitle">Arte de</span>
+    <h1 class="main-title">Mariano Romero</h1>
+  </div>
 </LayoutMain>
+
+<style lang="scss">
+		@import "../base.scss";
+  .container {
+    padding-top: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+
+    @include respond-to("desktop") {
+      padding-top: 275px;
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+    @include respond-to("widescreen") {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    .main-subtitle {
+      font-size: 16px;
+      font-weight: 400;
+      color: white;
+      margin-bottom: 10px;
+      @include respond-to("desktop") {
+        margin-bottom: 15px;
+        font-size: 22px;
+      }
+    }
+    .main-title {
+      text-align: center;
+      font-family: "UnifrakturMaguntia";
+      font-size: 54px;
+      color: $color-white;
+      letter-spacing: 2px;
+      @include respond-to("desktop") {
+        font-size: 90px;
+      }
+    }
+  }
+</style>

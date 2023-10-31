@@ -1,27 +1,91 @@
 ---
-import LayoutMain from '../../layouts/Main.astro'
+import LayoutMain from "../../layouts/Main.astro";
+import { Image } from 'astro:assets';
+import FondoMain1 from "@/assets/fondo_main.jpg";
+import FondoMain2 from "@/assets/fondo_main2.jpg";
+import FondoMain3 from "@/assets/fondo_main3.jpg";
+import FondoMain4 from "@/assets/fondo_main4.jpg";
 ---
 
 <LayoutMain classMask="main-mask-dark">
-	
- <div class="container container-obras">
-  <h1 class="obras-title">Obras Elegidas</h1>
+  <div class="container container-obras">
+    <h1 class="obras-title">Obras Elegidas</h1>
 
-  <div class="obras">
-   <div class="obras-img">
-    <img src="/img/fondo_main4.jpg" alt="Obra 1">
-   </div>
-   <div class="obras-img">
-    <img src="/img/fondo_main2.jpg" alt="Obra 1">
-   </div>
-   <div class="obras-img">
-    <img src="/img/fondo_main3.jpg" alt="Obra 1">
-   </div>
-   <div class="obras-img">
-    <img src="/img/fondo_main.jpg" alt="Obra 1">
-   </div>
+    <div class="obras">
+      <div class="obras-img">
+        <Image src={FondoMain1} alt="Obra 1" />
+      </div>
+      <div class="obras-img">
+        <Image src={FondoMain2} alt="Obra 2" />
+      </div>
+      <div class="obras-img">
+        <Image src={FondoMain3} alt="Obra 3" />
+      </div>
+      <div class="obras-img">
+        <Image src={FondoMain4} alt="Obra 4" />
+      </div>
+    </div>
   </div>
- </div>
-
-
 </LayoutMain>
+
+<style lang="scss">
+ @import "@/base.scss";
+  .container-obras {
+    position: relative;
+    z-index: 9;
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+
+    @include respond-to("desktop") {
+      padding-top: 100px;
+    }
+
+    .obras-title {
+      font-family: "UnifrakturMaguntia";
+      color: white;
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+      font-size: 40px;
+      @include respond-to("desktop") {
+        font-size: 60px;
+      }
+    }
+
+    .obras {
+      width: 100%;
+
+      .obras-img {
+        cursor: pointer;
+        position: relative;
+        height: 250px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        max-width: 100%;
+        border: 1px solid white;
+        transition: 0.3s transform ease;
+
+        &:hover {
+          transform: scale(1.1);
+          z-index: 1;
+        }
+
+        @include respond-to("desktop") {
+          height: 500px;
+          margin-bottom: 50px;
+        }
+
+        img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+</style>

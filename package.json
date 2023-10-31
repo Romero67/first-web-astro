@@ -3,7 +3,6 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "compile:sass": "sass ./src/sass/main.scss ./public/css/styles.css --watch",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
@@ -11,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^3.3.2"
+    "astro": "^3.3.2",
+    "sass": "^1.69.5"
   }
 }

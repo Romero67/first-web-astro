@@ -1,59 +1,126 @@
 <nav class="nav">
- <div class="container">
-  <a href="/" class="logo">
-   <span>MR</span>
-  </a>
+  <div class="container">
+    <a href="/" class="logo">
+      <span>MR</span>
+    </a>
 
-  <ul class="navbar">
-   <li>
-    <a href="/">Inicio</a>
-   </li>
-   <li>
-    <a href="/obras">Obras elegidas</a>
-   </li>
-   <li>
-    <a href="/acerca">Acerca de</a>
-   </li>
-   <li>
-    <a href="/contacto">Contacto</a>
-   </li>
-  </ul>
+    <ul class="navbar">
+      <li>
+        <a href="/">Inicio</a>
+      </li>
+      <li>
+        <a href="/obras">Obras elegidas</a>
+      </li>
+      <li>
+        <a href="/acerca">Acerca de</a>
+      </li>
+      <li>
+        <a href="/contacto">Contacto</a>
+      </li>
+    </ul>
 
-  <div class="btn-menu">
-   <svg enable-background="new 0 0 32 32" id="Glyph" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M26,16c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2s0.896-2,2-2h16C25.104,14,26,14.896,26,16z" id="XMLID_314_"/><path d="M26,8c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2s0.896-2,2-2h16C25.104,6,26,6.896,26,8z" id="XMLID_315_"/><path d="M26,24c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2s0.896-2,2-2h16C25.104,22,26,22.896,26,24z" id="XMLID_316_"/></svg>
+    <div class="btn-menu">
+      <svg
+        enable-background="new 0 0 32 32"
+        id="Glyph"
+        version="1.1"
+        viewBox="0 0 32 32"
+        xml:space="preserve"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        ><path
+          d="M26,16c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2s0.896-2,2-2h16C25.104,14,26,14.896,26,16z"
+          id="XMLID_314_"></path><path
+          d="M26,8c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2s0.896-2,2-2h16C25.104,6,26,6.896,26,8z"
+          id="XMLID_315_"></path><path
+          d="M26,24c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2s0.896-2,2-2h16C25.104,22,26,22.896,26,24z"
+          id="XMLID_316_"></path></svg
+      >
+    </div>
   </div>
- </div>
 </nav>
 
-<script>
- function initBtnMenuSidebar(){
-  const sidebar = document.querySelector('.sidebar');
-  const btnMenu = document.querySelector('.nav .btn-menu');
- 
-  if(!btnMenu || !sidebar){
-   console.log("no hay botones o sidebar");
-   return;
-  }
- 
-  btnMenu.addEventListener('click', ()=>{
-   sidebar.classList.add('show')
-  })
- }
+<style lang="scss">
+    @import "../base.scss";
+  .nav {
+    background-color: $color-brand;
 
- initBtnMenuSidebar();
+    .container {
+      color: $color-white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .logo {
+      display: block;
+      font-size: 34px;
+      cursor: pointer;
+      span {
+        font-family: "UnifrakturMaguntia";
+      }
+    }
+
+    .navbar {
+      display: none;
+      column-gap: 35px;
+
+      @include respond-to("desktop") {
+        display: flex;
+      }
+
+      a {
+        color: $color-white;
+        font-family: "Roboto", sans-serif;
+      }
+      a.activo {
+        color: $color-lightgrey;
+      }
+    }
+
+    .btn-menu {
+      svg {
+        width: 25px;
+        height: 25px;
+        fill: white;
+      }
+      @include respond-to("desktop") {
+        display: none;
+      }
+    }
+  }
+</style>
+
+<script>
+  function initBtnMenuSidebar() {
+    const sidebar = document.querySelector(".sidebar");
+    const btnMenu = document.querySelector(".nav .btn-menu");
+
+    if (!btnMenu || !sidebar) {
+      console.log("no hay botones o sidebar");
+      return;
+    }
+
+    btnMenu.addEventListener("click", () => {
+      sidebar.classList.add("show");
+    });
+  }
+
+  initBtnMenuSidebar();
 </script>
 
 <script is:inline>
- var currentUrl = window.location.href;
- console.log("current url: ",currentUrl)
- var navLinks = document.querySelectorAll("nav ul li a");
+  var currentUrl = window.location.href;
+  console.log("current url: ", currentUrl);
+  var navLinks = document.querySelectorAll("nav ul li a");
 
- // Recorre los enlaces y compara sus URLs con la URL actual
- for (var i = 0; i < navLinks.length; i++) {
-  console.log("navLinks[i].href: ",navLinks[i].href)
-     if (navLinks[i].href === currentUrl) {
-      console.log("entró")
+  // Recorre los enlaces y compara sus URLs con la URL actual
+  for (var i = 0; i < navLinks.length; i++) {
+    console.log("navLinks[i].href: ", navLinks[i].href);
+    if (navLinks[i].href === currentUrl) {
+      console.log("entró");
       navLinks[i].classList.add("activo");
-     }
- }
+    }
+  }
 </script>

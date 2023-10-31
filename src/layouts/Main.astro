@@ -1,37 +1,69 @@
 ---
-import Navbar from '../components/Navbar.astro'
-import Sidebar from '../components/Sidebar.astro'
-import Footer from '../components/Footer.astro'
-const { classMask } = Astro.props
+import Navbar from "../components/Navbar.astro";
+import Sidebar from "../components/Sidebar.astro";
+import Footer from "../components/Footer.astro";
+
+const { classMask } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="stylesheet" type="text/css" href="/css/styles.css">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
-  
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap"
+      rel="stylesheet"
+    />
 
-		<title>Demo 1 Prospect Ar</title>
-	</head>
-	<body>
+    <title>Demo 1 Prospect Ar</title>
+  </head>
+  <body>
+    <Navbar />
+    <Sidebar />
 
-		<Navbar />
-  <Sidebar />
+    <main class="main">
+      <div class=`main-mask ${classMask}`></div>
+      <slot />
+    </main>
 
-		<main class="main">
-			<div class=`main-mask ${classMask}`></div>
-			<slot />
-		</main>
+    <Footer />
 
-  <Footer />
-
-	</body>
+  </body>
 </html>
+
+<style lang="scss">
+
+	@import "@/base.scss";
+  main {
+    background-image: url('@/assets/fondo_main4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
+
+    .main-mask {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.3);
+    }
+    .main-mask-dark {
+      background: rgba(0, 0, 0, 0.7);
+    }
+  }
+</style>

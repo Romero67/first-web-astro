@@ -1,0 +1,72 @@
+@mixin respond-to($breakpoint) {
+ @if map-has-key($breakpoints, $breakpoint) {
+   @media (min-width: map-get($breakpoints, $breakpoint)) {
+     @content;
+   }
+ }
+
+ @else {
+   @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+       + "Please make sure it is defined in `$breakpoints` map.";
+ }
+}
+
+$breakpoints: (
+  'smallphone': 23.4375em, //375px
+  'bigphone': 31.25em,     //500px
+  'mobile': 43.75em,       //700px
+  'tablet': 48em,          //768px
+  'desktop': 64em,         //1024px
+  'notebook': 80em,        //1280px
+  'widescreen': 90em,      //1440px
+  'fullhd': 120em          //1920px
+) !default;
+
+$basefont: 'Source Sans Pro', sans-serif;
+
+$color-brand:#080808;
+$color-black:#000;
+$color-darkgrey:#303030;
+$color-grey:#48494D;
+$color-lightgrey:#A7A8AA;
+$color-lightergrey:#E8E8E8;
+$color-white: #fff;
+
+*{
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ font-family: 'Merriweather', serif;
+}
+
+a {
+ color: white;
+ text-decoration: none;
+}
+
+a,button {
+ outline: none;
+ &:active,
+ &:focus,
+ &:hover {
+     text-decoration: none;
+ }
+}
+
+ul {
+ padding: 0;
+ list-style: none;
+}
+
+.container{
+ padding: 0 10px;
+ max-width: 1440px;
+ margin: auto;
+
+ @include respond-to('desktop'){
+  padding: 0 60px;
+ }
+ @include respond-to('widescreen'){
+  padding: 0 0;
+ }
+}
